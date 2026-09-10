@@ -37,6 +37,22 @@ python build.py
 
 That rewrites `sizes.json` in both packages. Bump both version numbers before publishing.
 
+## Releasing
+
+Both packages publish from a single tag push, using OIDC trusted publishing on
+each registry. No tokens are stored in this repository.
+
+```bash
+# bump the version in npm/papersizes-guide/package.json and pypi/pyproject.toml,
+# then:
+git tag v1.0.1 && git push --tags
+```
+
+The workflow refuses to publish if the tag does not match the version in the
+manifest, and runs a smoke test against the bundled dataset before either
+package leaves the runner.
+
+
 ## Live API
 
 The same data is available as a free REST API with no key and open CORS, documented at [papersizes.guide/data](https://papersizes.guide/data/):
