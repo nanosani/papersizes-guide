@@ -1,6 +1,6 @@
 {
   "name": "papersizes-guide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Every standard paper size offline: ISO A/B/C, US and ANSI, ARCH, envelopes, photo, card, book and regional formats, with dimensions in mm, cm, inches, points and pixels.",
   "main": "index.js",
   "types": "index.d.ts",
