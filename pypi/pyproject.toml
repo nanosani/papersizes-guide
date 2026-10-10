@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "papersizes-guide"
-version = "1.0.2"
+version = "1.0.3"
 description = "Every standard paper size offline: ISO A/B/C, US and ANSI, ARCH, envelopes, photo, card, book and regional formats, with dimensions in mm, cm, inches, points and pixels."
 readme = "README.md"
 requires-python = ">=3.9"
