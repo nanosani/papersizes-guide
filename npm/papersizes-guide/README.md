@@ -2,7 +2,7 @@
 
 Every standard paper size, offline. No network calls, no API key, one dependency-free file.
 
-Covers 324 sizes across 23 series: ISO A, B and C, US and ANSI, ARCH, envelopes, photo prints, business and ID cards, book trim sizes, newspapers, billboards, and regional standards from Japan, China, France, Canada, Colombia and the British Imperial system.
+Covers 336 sizes across 24 series: ISO A, B and C, US and ANSI, ARCH, envelopes, photo prints, business and ID cards, book trim sizes, square formats (sticky notes, origami, CD and vinyl sleeves, square prints), newspapers, billboards, and regional standards from Japan, China, France, Canada, Colombia and the British Imperial system.
 
 ```bash
 npm install papersizes-guide

@@ -1,6 +1,6 @@
 # papersizes-guide
 
-Official client packages for the [papersizes.guide](https://papersizes.guide/) open paper size dataset: 324 sizes across 23 series, offline, with no dependencies.
+Official client packages for the [papersizes.guide](https://papersizes.guide/) open paper size dataset: 336 sizes across 24 series, offline, with no dependencies.
 
 Covers ISO A, B and C, US and ANSI, ARCH, envelopes, photo prints, business and ID cards, book trim sizes, newspapers, billboards, and regional standards from Japan, China, France, Canada, Colombia and the British Imperial system.
 
