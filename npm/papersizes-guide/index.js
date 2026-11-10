@@ -34,8 +34,10 @@ function ratioLabel(w, h) {
 function decorate(row) {
   const w = row.width_mm;
   const h = row.height_mm;
-  const wIn = w / MM_PER_IN;
-  const hIn = h / MM_PER_IN;
+  // Oficio is an 8.5 × 13 in sheet listed as 216 × 330 mm, matching papersizes.guide.
+  const oficio = w === 216 && h === 330;
+  const wIn = (oficio ? 215.9 : w) / MM_PER_IN;
+  const hIn = (oficio ? 330.2 : h) / MM_PER_IN;
 
   return Object.assign({}, row, {
     widthMm: w,

@@ -84,6 +84,13 @@ class PaperSize:
 
     # -- derived ---------------------------------------------------------
     @property
+    def _inch_basis(self) -> tuple[float, float]:
+        # Oficio is an 8.5 x 13 in sheet listed as 216 x 330 mm, matching papersizes.guide.
+        if (self.width_mm, self.height_mm) == (216, 330):
+            return (215.9, 330.2)
+        return (self.width_mm, self.height_mm)
+
+    @property
     def width_cm(self) -> float:
         return round(self.width_mm / 10, 2)
 
@@ -93,19 +100,19 @@ class PaperSize:
 
     @property
     def width_in(self) -> float:
-        return round(self.width_mm / MM_PER_IN, 2)
+        return round(self._inch_basis[0] / MM_PER_IN, 2)
 
     @property
     def height_in(self) -> float:
-        return round(self.height_mm / MM_PER_IN, 2)
+        return round(self._inch_basis[1] / MM_PER_IN, 2)
 
     @property
     def width_pt(self) -> float:
-        return round(self.width_mm / MM_PER_IN * PT_PER_IN, 1)
+        return round(self._inch_basis[0] / MM_PER_IN * PT_PER_IN, 1)
 
     @property
     def height_pt(self) -> float:
-        return round(self.height_mm / MM_PER_IN * PT_PER_IN, 1)
+        return round(self._inch_basis[1] / MM_PER_IN * PT_PER_IN, 1)
 
     @property
     def ratio(self) -> float:
@@ -134,8 +141,8 @@ class PaperSize:
     def pixels(self, dpi: int = 300) -> tuple[int, int]:
         """Pixel dimensions at a given resolution."""
         return (
-            round(self.width_mm / MM_PER_IN * dpi),
-            round(self.height_mm / MM_PER_IN * dpi),
+            round(self._inch_basis[0] / MM_PER_IN * dpi),
+            round(self._inch_basis[1] / MM_PER_IN * dpi),
         )
 
     def weight(self, gsm: float) -> float:
